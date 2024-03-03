@@ -19,7 +19,7 @@ const SignUpForm=()=>{
         event.preventDefault();
 
 
-        if(password!=confirmPassword){
+        if(password!==confirmPassword){
             alert('passwords do not match');
             return;
         }
@@ -44,8 +44,8 @@ const SignUpForm=()=>{
     }
     return(
       <div className="sign-up-container">
-       <h2>Don't have an account?</h2>
-       <span>Sign Up with Email and Password</span>
+       <h2>Don't Have An Account?</h2>
+       <span>Sign Up With Email And Password</span>
        <form onSubmit={handleSubmit}>      
         <FormInput label='Display Name' type="text" required onChange={handleChange} name="displayName" value={displayName}/>
         
