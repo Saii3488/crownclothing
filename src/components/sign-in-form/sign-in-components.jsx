@@ -46,8 +46,8 @@ const SignInForm=()=>{
     }
     return(
       <div className="sign-up-container">
-       <h2>Already have an account?</h2>
-       <span>Sign In with Email and Password</span>
+       <h2>Already Have An Account?</h2>
+       <span>Sign In With Email And Password</span>
        <form onSubmit={handleSubmit}>     
         
         <FormInput label='Email' type="email" required onChange={handleChange} name="email" value={email}/>
