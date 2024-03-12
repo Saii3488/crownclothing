@@ -5,6 +5,7 @@ import {selectCartTotal} from '../../store/cart/cart.selector'
 import {selectCurrentUser} from '../../store/user/user.selector'
 import {BUTTON_TYPE_CLASSES} from "../button/button-components";
 import { PaymentFormContainer,FormContainer,PaymentButton } from "./payment-form.styles";
+import axios from "axios";
 const PaymentForm=()=>{
     const stripe=useStripe()
     const elements=useElements()
@@ -24,6 +25,7 @@ const PaymentForm=()=>{
       },
       body:JSON.stringify({amount:amount*100})
      }).then((res) => {
+      
       return res.json();
     });
 
