@@ -5,10 +5,17 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^2.5.1",
     "@stripe/stripe-js": "^3.0.7",
+    "@testing-library/dom": "^9.3.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.26",
+    "@types/react": "^18.2.65",
+    "@types/react-dom": "^18.2.21",
+    "@types/redux-logger": "^3.0.13",
     "axios": "^1.6.7",
+    "babel-plugin-macros": "^3.1.0",
     "dotenv": "^16.4.5",
     "firebase": "^10.8.0",
     "react": "^18.2.0",
@@ -25,6 +32,8 @@
     "sass": "^1.71.1",
     "stripe": "^14.20.0",
     "styled-components": "^6.1.8",
+    "typed-redux-saga": "^1.5.0",
+    "typescript": "^5.4.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

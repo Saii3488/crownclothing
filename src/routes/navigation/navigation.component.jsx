@@ -3,10 +3,10 @@ import { Fragment, } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import CartIcon from "../../components/cart-icon/cart-icon.components";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
-import { selectIsCartOpen } from "../../store/cart/cart.selector.jsx";
-import { selectCurrentUser } from "../../store/user/user.selector.jsx";
+import { selectIsCartOpen } from "../../store/cart/cart.selector.ts";
+import { selectCurrentUser } from "../../store/user/user.selector.ts";
 import { ReactComponent as Crwnlogo } from '../../assets/crown.svg'
-import { signOutStart } from "../../store/user/user.action.jsx";
+import { signOutStart } from "../../store/user/user.action.ts";
 import './navigation.styles.jsx'
 import { NavigationContainer,LogoContainer,NavLinks,NavLink } from "./navigation.styles.jsx";
 const Navigation=()=>{
