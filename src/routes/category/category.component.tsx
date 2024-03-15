@@ -8,8 +8,11 @@ import { selectCategoriesMap,selectCategoriesIsLoading } from '../../store/categ
 
 import './category.styles.scss'
 import Spinner from '../../components/spinner/spinner.components'
+export type CategoryRouteParams={
+  category:string
+}
 const Category=()=>{
-  const{category}=useParams();
+  const{category}=useParams<keyof CategoryRouteParams>()as CategoryRouteParams;
   const categoriesmap=useSelector(selectCategoriesMap)
   const isLoading=useSelector(selectCategoriesIsLoading)
   const[products,setProducts]=useState(categoriesmap[category])
