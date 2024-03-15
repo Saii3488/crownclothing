@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,FormEvent,ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
 
 import { googleSignInStart,emailSignInStart } from "../../store/user/user.action";
@@ -23,7 +23,7 @@ const SignInForm=()=>{
     }
     
     
-    const handleSubmit= async (event)=>{
+    const handleSubmit= async (event:FormEvent<HTMLFormElement>)=>{
         event.preventDefault();
 
 
@@ -36,14 +36,12 @@ const SignInForm=()=>{
             resetFormFields();
 
         } catch(error){
-          if(error.code == 'auth/invalid-credential'){
-            alert('Wrong Password');
-          }
+          
           console.log(error);
         };
     };
     
-    const handleChange=(event)=>{
+    const handleChange=(event:ChangeEvent<HTMLInputElement>)=>{
      const{name,value}=event.target;
      setFormFields({...formFields,[name]: value});
     }

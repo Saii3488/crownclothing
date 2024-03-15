@@ -6,7 +6,10 @@ top: -14px;
 font-size: 12px;
 color: ${MainColor};
 `
-export const FormInputLabel=styled.label`
+export type FormInputLabelProps={
+  shrink?:boolean;
+}
+export const FormInputLabel=styled.label<FormInputLabelProps>`
     color:${SubColor};
     font-size: 16px;
     font-weight: normal;

@@ -1,5 +1,5 @@
 import {takeLatest,call,all,put} from 'typed-redux-saga/macro'
-import { User } from 'firebase/auth'
+import { User,AuthError,AuthErrorCodes } from 'firebase/auth'
 import { USER_ACTION_TYPES } from './user.types'
 import { signInSuccess,signInFailed,signUpSuccess,signUpFailed,signOutSuccess,signOutFailed,EmailSignInStart,SignUpStart,SignUpSuccess } from './user.action'
 import { getCurrentUser,createUserDocumentFromAuth,signInWithGooglePopup,signInAuthUserWithEmailAndPassword,createAuthUserWithEmailAndPassword,signOutUser,AdditionalInformation} from '../../utils/firebase/firebase.utils'
@@ -31,6 +31,9 @@ export function* signInWithEmail({payload:{email,password}}:EmailSignInStart){
       }  
     }catch(error){
       yield* put(signInFailed(error as Error))
+      if((error as AuthError).code === AuthErrorCodes.INVALID_LOGIN_CREDENTIALS){
+        alert('wrong password')
+    }
       
     }
 }
@@ -52,6 +55,9 @@ export function* signUp({payload:{email,password,displayName}}:SignUpStart){
       }  
   }catch(error){
     yield* put(signUpFailed(error as Error))
+    if((error as AuthError).code === AuthErrorCodes.EMAIL_EXISTS){
+      alert('cannnot create user,email already in use')
+  }
     
   }
 }
