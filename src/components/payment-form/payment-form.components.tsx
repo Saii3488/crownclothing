@@ -17,6 +17,7 @@ const PaymentForm=()=>{
     const amount=useSelector(selectCartTotal)
     const[isProcessingPayment,setIsProcessingPayment]=useState(false)
     const PaymentHandler=async(e:FormEvent<HTMLFormElement>)=>{
+      alert('payment is successful')
      e.preventDefault();
      if(!stripe || !elements){
         return;
@@ -34,6 +35,7 @@ const PaymentForm=()=>{
       return res.json();
     });
 
+
      const{
       paymentIntent:{client_secret},
      }=response
@@ -48,8 +50,7 @@ const PaymentForm=()=>{
           name:currentUser?currentUser.displayName:'Guest',
         },
 
-      }
-     })
+      }})
      setIsProcessingPayment(false)
      if(paymentResult.error){
       alert(paymentResult.error)
@@ -64,7 +65,7 @@ const PaymentForm=()=>{
           <FormContainer onSubmit={PaymentHandler}>
            <h2>Credit Card Payment:</h2>
            <CardElement />
-           <PaymentButton isLoading={isProcessingPayment} buttonType={BUTTON_TYPE_CLASSES.inverted}>Pay Now</PaymentButton>
+           <PaymentButton isLoading={isProcessingPayment}   buttonType={BUTTON_TYPE_CLASSES.inverted}>Pay Now</PaymentButton>
           </FormContainer>
         </PaymentFormContainer>
     )
