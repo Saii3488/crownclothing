@@ -20,6 +20,22 @@
         &:last-child {
           width: 8%;
         }
+        @media screen and (max-width: 800px){
+          width: 90%;
+          padding: 0px 0;
+          display: block;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          margin-left: 0%;
+          margin-right: 30px;
+          border-bottom: 0px solid darkgrey;
+          
+          
+        }
+      }
+      @media screen and (max-width: 800px){
+        border-bottom: 0px solid darkgrey;
       }
     }
       
@@ -27,6 +43,10 @@
     .total {
       margin-top: 30px;
       margin-left: auto;
-      font-size: 36px;
+      font-size:20px;
     }
-  }
+    
+    @media screen and (max-width: 800px){
+      margin-right: 300px;
+    }
+}
