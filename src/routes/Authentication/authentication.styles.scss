@@ -6,5 +6,8 @@
     @media screen and (max-width: 800px) {
         display: block;
         width: 600px;
+        margin-left: 0px;
+        margin-right: 100px;
+        justify-content: space-between;
       }
 }
