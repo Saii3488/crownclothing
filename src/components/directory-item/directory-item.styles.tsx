@@ -36,6 +36,10 @@ export const Body = styled.div`
     font-weight: lighter;
     font-size: 16px;
   }
+  @media screen and (max-width: 800px) {
+    height: 90px;
+    padding: 0 5px;
+  }
 `;
 
 export const DirectoryItemContainer = styled.div`
