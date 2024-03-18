@@ -17,7 +17,7 @@ const PaymentForm=()=>{
     const amount=useSelector(selectCartTotal)
     const[isProcessingPayment,setIsProcessingPayment]=useState(false)
     const PaymentHandler=async(e:FormEvent<HTMLFormElement>)=>{
-      alert('payment is successful')
+      
      e.preventDefault();
      if(!stripe || !elements){
         return;
