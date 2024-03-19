@@ -26,6 +26,8 @@ const Navigation=()=>{
           </NavLink>
           {currentUser?(
             <NavLink as='span' onClick={signOutUser}>SIGN OUT</NavLink>
+            
+            
           ):(
             <NavLink to='/Authentication'>
               SIGN IN
