@@ -18,6 +18,7 @@ export function* signInWithGoogle(){
     try{
       const {user}=yield* call(signInWithGooglePopup)
       yield* call(getSnapShotFromUserAuth,user)
+      alert("you are signed in")
     }catch(error){
       yield* put(signInFailed(error as Error))
     }
@@ -28,6 +29,8 @@ export function* signInWithEmail({payload:{email,password}}:EmailSignInStart){
       if(userCredential){
         const{user}=userCredential
         yield* call(getSnapShotFromUserAuth,user)
+        alert("you are signed in")
+        
       }  
     }catch(error){
       yield* put(signInFailed(error as Error))
@@ -52,6 +55,7 @@ export function* signUp({payload:{email,password,displayName}}:SignUpStart){
       if(userCredential){
         const{user}=userCredential
         yield* put(signUpSuccess(user,{displayName}))
+        alert("you are signed in")
       }  
   }catch(error){
     yield* put(signUpFailed(error as Error))
